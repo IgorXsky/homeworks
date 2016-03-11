@@ -164,8 +164,6 @@ echo "</pre>";
 
 shuffle($heroes);
 
-$day = &$key;
-
 foreach($heroes as $key => $values){
     if($key <= 28){
         $key++;
