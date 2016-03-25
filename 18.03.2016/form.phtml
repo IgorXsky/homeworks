@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Uploads</title>
+</head>
+<body>
+
+
+    <table>
+        <?php for($i = 0; $i < count($files); $i++){
+            $path = $dir.$files[$i];?>
+            <tr>
+                <td><a href="$path"><img src="$path" width="180" /></a></td>
+            </tr>
+            <? } ?>
+    </table>
+
+    <form enctype="multipart/form-data" action="index.php" method="post">
+        <p>Отправить файл:</p>
+        <input name="userfile" type="file">
+        <input type="submit" value="ОТПРАВИТЬ">
+    </form>
+
+</body>
+</html>
