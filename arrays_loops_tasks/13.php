@@ -1,9 +1,20 @@
 <?php
 
-echo "<table><tr>";
-for ($x = 1; $x <= 10; $x++) {
-    for ($y = 1; $y <= 10; $y++)
-        echo "<td> $x*$y </td>";
-    if ($x != 10) echo "</tr><tr>";    };
-echo "</tr></table>";
+//Вывести таблицу умножения
+
+$strx = 10;
+$sty = 10;
+
+echo "<table border='1'>";
+
+for($x=1; $x < $strx; $x++){
+    echo "<tr>";
+    for($y=1; $y < $sty; $y++){
+        echo "<td>" .$x*$y. "</td>";
+    }
+    echo "</tr>";
+}
+
+echo "</table>";
+
 
