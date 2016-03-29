@@ -7,7 +7,7 @@ $today = (int)date("m");
 
 foreach($month as $key => $item){
 
-    if($today == $key){
+    if($today == ++$key){
     echo "<b> {$item} </b> <br>";
     }else{
         echo "$item <br>";
