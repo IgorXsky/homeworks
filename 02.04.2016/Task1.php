@@ -10,4 +10,6 @@ function select($connection, $table, $id = null){
     }else{
         $query = 'SELECT * FROM' . "$table";
     }
+    $result = mysqli_query($connection, $query);
+    return $result;
 }
