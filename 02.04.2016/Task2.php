@@ -4,8 +4,6 @@
 массива $data где ключ массива это поле (колонка),
 а значение массива это сама запись. */
 
-$connection = mysqli_connect('localhost', 'root', '') or die('Could not connect: ' . mysqli_error($connection));
-mysqli_select_db($connection, 'homework') or die('Could not select database');
 $data = ['id' => '1',
         'name' => 'Igor',
         'surname' => 'Pavliuk',
@@ -13,14 +11,17 @@ $data = ['id' => '1',
 
 function insert($connection, $table, $data)
 {
-    $keys = "'id', 'name', 'value'";
+    $keys = [];
+    foreach($data as $key => $item){
+        $keys[] = $key;
+    }
+    $table_keys = implode("," ,$keys);
+
     $values = "'{$data['id']}', '{$data['name']}', '{$data['surname']}'";
-    $query = "INSERT INTO {$table}  ( {$keys} )
-              VALUES ( {$values} )";
+    $query = "INSERT INTO {$table} ({$table_keys})
+              VALUES ({$values})";
     $result = mysqli_query($connection, $query) or die('Query failed: ' . mysqli_error($connection));
     return $result;
 }
 
-insert($connection, 'students', $data);
-print_r($result);
 
